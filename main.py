@@ -25,7 +25,10 @@ def kbhit(window,char,no):
     if ch == -1:
         return 0
 
-    nch = int(str(chr(ch)))
+    try:
+        nch = int(str(chr(ch)))
+    except ValueError:
+        nch = -1
 
     if (nch == char or nch in no):
         if (nch == char):
